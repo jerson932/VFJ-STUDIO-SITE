@@ -29,6 +29,7 @@ const PHOTOS=[
 {f:"graduacion-11.jpg",c:"graduacion",l:"Graduación",o:"v",r:"027"},
 {f:"graduacion-12.jpg",c:"graduacion",l:"Graduación",o:"v",r:"028"},
 {f:"graduacion-13.jpg",c:"graduacion",l:"Graduación",o:"v",r:"029"},
+{f:"graduacion-14.jpg",c:"graduacion",l:"Graduación",o:"v",r:"050"},
 {f:"baby-shower-01.jpg",c:"baby-shower",l:"Baby Shower",o:"h",r:"030"},
 {f:"baby-shower-02.jpg",c:"baby-shower",l:"Baby Shower",o:"h",r:"031"},
 {f:"baby-shower-03.jpg",c:"baby-shower",l:"Baby Shower",o:"s",r:"032"},

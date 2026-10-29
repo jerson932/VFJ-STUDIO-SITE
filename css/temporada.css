@@ -1,0 +1,159 @@
+/* ==========================================================================
+   VFJ STUDIO — Temas por temporada
+   Solo se activan cuando js/temporada.js pone data-tema en <html>.
+   Sin tema activo, este archivo no cambia nada.
+   ========================================================================== */
+
+/* ---------- Capa de decoración (común) ---------- */
+.tm-capa{
+  position:fixed; inset:0; z-index:150; pointer-events:none; overflow:hidden;
+}
+
+/* ==========================================================================
+   HALLOWEEN — naranja calabaza sobre negro morado
+   ========================================================================== */
+html[data-tema="halloween"]{
+  --ink:      #0F0C11;
+  --ink-2:    #17121A;
+  --ink-3:    #1F1823;
+  --ash:      #2E2533;
+  --brass:    #EE7B30;
+  --brass-dim:#9A4A1C;
+}
+html[data-tema="halloween"] body{
+  background:
+    radial-gradient(1100px 620px at 88% -8%, rgba(130,64,190,.16), transparent 70%),
+    radial-gradient(900px 520px at 8% -4%, rgba(238,123,48,.08), transparent 70%),
+    var(--ink);
+}
+html[data-tema="halloween"] .nav{ background:rgba(15,12,17,.92); }
+html[data-tema="halloween"] .hero-media::after{
+  background:
+    linear-gradient(to top, var(--ink) 4%, rgba(15,12,17,.55) 45%, rgba(15,12,17,.72) 100%),
+    linear-gradient(to right, rgba(15,12,17,.85) 0%, rgba(15,12,17,.15) 65%),
+    linear-gradient(160deg, rgba(110,40,160,.22), rgba(238,123,48,.10));
+}
+html[data-tema="halloween"] .hero h1 em,
+html[data-tema="halloween"] .display em,
+html[data-tema="halloween"] .section-head h2 em,
+html[data-tema="halloween"] .band h2 em{ text-shadow:0 0 28px rgba(238,123,48,.45); }
+html[data-tema="halloween"] .btn-primary{ box-shadow:0 0 22px rgba(238,123,48,.28); }
+html[data-tema="halloween"] .form-msg.ok{ background:rgba(238,123,48,.12); }
+
+/* Telaraña con araña colgando (esquina superior derecha) */
+.tm-tela{
+  position:absolute; top:68px; right:0;
+  width:clamp(96px, 12vw, 170px);
+}
+.tm-tela svg{ width:100%; height:auto; display:block; overflow:visible; }
+.tm-hilos{ fill:none; stroke:rgba(243,239,232,.22); stroke-width:.55; }
+.tm-arana{ animation:tm-colgar 5s ease-in-out infinite; }
+.tm-arana line{ stroke:rgba(243,239,232,.3); stroke-width:.5; }
+.tm-arana ellipse, .tm-arana circle{ fill:#0A080B; stroke:rgba(238,123,48,.55); stroke-width:.6; }
+.tm-patas{ fill:none; stroke:#0A080B; stroke-width:1.2; stroke-linecap:round; }
+@keyframes tm-colgar{
+  0%,100%{ transform:translateY(0); }
+  50%    { transform:translateY(14px); }
+}
+
+/* Murciélagos volando */
+.tm-murc{
+  position:absolute; left:0;
+  animation:tm-volar linear infinite;
+}
+.tm-murc.izq{ animation-name:tm-volar-izq; }
+.tm-murc-ola{ animation:tm-ola ease-in-out infinite; }
+.tm-murc svg{
+  width:100%; height:auto; display:block; transform-origin:50% 40%;
+  animation:tm-aleteo ease-in-out infinite alternate;
+  filter:drop-shadow(0 0 5px rgba(238,123,48,.45));
+}
+.tm-murc path{ fill:#1B1320; }
+@keyframes tm-volar    { from{ transform:translateX(-12vw); } to{ transform:translateX(112vw); } }
+@keyframes tm-volar-izq{ from{ transform:translateX(112vw); } to{ transform:translateX(-12vw); } }
+@keyframes tm-ola{
+  0%,100%{ transform:translateY(0); }
+  50%    { transform:translateY(-26px); }
+}
+@keyframes tm-aleteo{
+  from{ transform:scaleY(1); }
+  to  { transform:scaleY(.42); }
+}
+
+/* ==========================================================================
+   NAVIDAD — rojo navideño sobre verde pino oscuro
+   ========================================================================== */
+html[data-tema="navidad"]{
+  --ink:      #0B100D;
+  --ink-2:    #111813;
+  --ink-3:    #17201A;
+  --ash:      #24302A;
+  --brass:    #E0524A;
+  --brass-dim:#8E2F2A;
+}
+html[data-tema="navidad"] body{
+  background:
+    radial-gradient(1100px 600px at 50% -10%, rgba(224,82,74,.10), transparent 70%),
+    radial-gradient(800px 500px at 100% 0%, rgba(255,201,77,.05), transparent 70%),
+    var(--ink);
+}
+html[data-tema="navidad"] .nav{ background:rgba(11,16,13,.92); }
+html[data-tema="navidad"] .hero-media::after{
+  background:
+    linear-gradient(to top, var(--ink) 4%, rgba(11,16,13,.55) 45%, rgba(11,16,13,.72) 100%),
+    linear-gradient(to right, rgba(11,16,13,.85) 0%, rgba(11,16,13,.15) 65%);
+}
+html[data-tema="navidad"] .hero h1 em,
+html[data-tema="navidad"] .display em,
+html[data-tema="navidad"] .section-head h2 em,
+html[data-tema="navidad"] .band h2 em{ text-shadow:0 0 26px rgba(224,82,74,.35); }
+html[data-tema="navidad"] .form-msg.ok{ background:rgba(224,82,74,.12); }
+
+/* Luces navideñas colgando debajo del menú */
+.tm-luces{
+  position:absolute; left:0; right:0; top:100%; height:34px;
+  pointer-events:none; overflow:hidden; z-index:1;
+}
+.tm-cable{ position:absolute; left:0; top:0; display:block; }
+.tm-cable path{ fill:none; stroke:#2C3530; stroke-width:1.4; }
+.tm-luces i{
+  position:absolute; width:7px; height:11px; margin-left:-3.5px; margin-top:1px;
+  border-radius:50% 50% 46% 46% / 40% 40% 60% 60%;
+  background:var(--c);
+  box-shadow:0 0 6px 1px var(--c), 0 0 16px 2px var(--c);
+  animation:tm-brillo ease-in-out infinite alternate;
+}
+.tm-luces i::before{
+  content:""; position:absolute; left:1.5px; top:-3px; width:4px; height:4px;
+  background:#3A443E; border-radius:1px;
+}
+@keyframes tm-brillo{
+  from{ opacity:1; filter:brightness(1.15); }
+  to  { opacity:.35; filter:brightness(.7); }
+}
+
+/* Nieve cayendo */
+.tm-copo{
+  position:absolute; top:0; display:block;
+  animation:tm-caer linear infinite;
+}
+.tm-copo b{
+  display:block; border-radius:50%; background:#FFFFFF;
+  animation:tm-mecer ease-in-out infinite alternate;
+}
+@keyframes tm-caer{
+  from{ transform:translateY(-12px); }
+  to  { transform:translateY(102vh); }
+}
+@keyframes tm-mecer{
+  from{ transform:translateX(-14px); }
+  to  { transform:translateX(14px); }
+}
+
+/* ---------- Ajustes ---------- */
+@media (max-width:640px){
+  .tm-tela{ width:84px; opacity:.85; }
+}
+@media (prefers-reduced-motion:reduce){
+  .tm-arana, .tm-luces i{ animation:none !important; }
+}

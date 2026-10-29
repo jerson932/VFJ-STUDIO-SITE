@@ -316,6 +316,7 @@ body::after{
 
 /* ---------- Equipo ---------- */
 .team{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.2rem,3vw,2.4rem); }
+.team.solo{ grid-template-columns:minmax(0, 34rem); }
 .member{ border-top:1px solid var(--ash); padding-top:1.5rem; }
 .member .rol{ font-family:var(--mono); font-size:.64rem; letter-spacing:.2em; text-transform:uppercase; color:var(--brass); margin-bottom:.7rem; }
 .member h3{ font-family:var(--display); font-size:var(--step-2); margin-bottom:.6rem; }
